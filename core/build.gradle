@@ -1,0 +1,26 @@
+apply plugin: "java"
+apply plugin: "kotlin"
+
+sourceCompatibility = 1.6
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+sourceSets.main.java.srcDirs = [ "src/" ]
+
+dependencies {
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
+
+    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+
+    compile "com.badlogicgames.gdx:gdx:$gdxVersion"
+    compile "com.badlogicgames.gdx:gdx-box2d:$gdxVersion"
+    compile "com.badlogicgames.gdx:gdx-freetype:$gdxVersion"
+
+    compile "net.dermetfan.libgdx-utils:libgdx-utils:0.13.4"
+    compile "net.dermetfan.libgdx-utils:libgdx-utils-box2d:0.13.4"
+    compile "de.tomgrill.gdxdialogs:gdx-dialogs-core:1.2.0"
+
+    testCompile "junit:junit:$junitVersion"
+    testCompile "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+}
